@@ -1,6 +1,6 @@
 /* "multicap", multiple capture example for ESCAPI */
 #include <stdio.h>
-#include "SDL.h"
+#include "SDL2/SDL.h"
 
 #include "escapi.h"
 

@@ -91,3 +91,8 @@ Some of the examples use external libraries:
 - some stb libraries, public domain, https://github.com/nothings/stb
 - ocornut's ImGui, MIT license, https://github.com/ocornut/imgui
 
+
+### Installing SDL2
+If you have VCPKG installed, you can install SDL2 using through
+```vcpkg install sdl2:x86-windows
+vckpg install sdl2:x64-windows```

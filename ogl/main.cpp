@@ -1,7 +1,7 @@
 /* "ogl", example of using OpenGL with ESCAPI to create a "funny mirror" effect */
 
-#include <SDL.h>
-#include <SDL_opengl.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_opengl.h>
 #include <math.h>
 #include <stdio.h>
 #include "escapi.h"

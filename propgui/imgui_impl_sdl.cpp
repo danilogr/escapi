@@ -4,9 +4,9 @@
 // See main.cpp for an example of using this.
 // https://github.com/ocornut/imgui
 
-#include <SDL.h>
-#include <SDL_syswm.h>
-#include <SDL_opengl.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_syswm.h>
+#include <SDL2/SDL_opengl.h>
 #include "imgui.h"
 #include "imgui_impl_sdl.h"
 
