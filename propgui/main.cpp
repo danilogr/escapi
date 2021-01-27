@@ -48,7 +48,7 @@ void devicewindow(int device)
 		for (i = 0; i < 256 * 256; i++)
 			capture[device].mTargetBuf[i] = (capture[device].mTargetBuf[i] & 0xff00ff00) |
 			((capture[device].mTargetBuf[i] & 0xff) << 16) |
-			((capture[device].mTargetBuf[i] & 0xff0000) >> 16);
+			((capture[device].mTargetBuf[i] & 0xff0000) >> 16) | (0xff000000); // last bit adds alpha = 100%
 
 		glBindTexture(GL_TEXTURE_2D, texture[device]);
 		// Load up the new data
@@ -161,6 +161,16 @@ int main(int, char**)
 		capture[i].mWidth = 256;
 		capture[i].mHeight = 256;
 		capture[i].mTargetBuf = new int[256 * 256];
+
+		// setup an initial color to the target buffer
+		for (int y = 0; y < 256; ++y)
+		{
+			for (int j = 0; j < 256; ++j)
+			{
+													  //AABBGGRR - little endian magic
+				capture[i].mTargetBuf[j + (y << 8)] = 0xFF0000FF; // shows a red image in case we can't cover it with texture
+			}
+		}
 
 		glGenTextures(1, &texture[i]);
 		glBindTexture(GL_TEXTURE_2D, texture[i]);
